@@ -1,0 +1,11 @@
+.input-group {
+  margin: 20px 0px;
+}
+
+tr {
+  /* width: 80%; */
+  /* border: 1px solid red; */
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
