@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchBook } from '../actions/index';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -13,7 +16,7 @@ class SearchBar extends Component {
   }
 
   onInputChange(event) {
-    console.log('search bar event', event.target.value);
+    // console.log('search bar event', event.target.value);
     this.setState({
       term: event.target.value
     });
@@ -22,6 +25,8 @@ class SearchBar extends Component {
   onFormSubmit(event) {
     event.preventDefault();
 
+    // We need to go and fetch book data
+    this.props.fetchBook(this.state.term);
     // Empty input after search
     this.setState({ term: '' });
   }
@@ -45,4 +50,8 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchBook }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
