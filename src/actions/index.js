@@ -3,7 +3,7 @@ import axios from 'axios';
 // const API_KEY = 'db9ab39b8cff62e7cb59d50fd2282de2';
 const ROOT_URL = 'https://www.googleapis.com/books/v1/volumes?q=';
 // same as ^^^^ const ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast?appid=' + API_KEY
-const RAM_URL = 'https://rickandmortyapi.com/api/character/?page=1';
+const RAM_URL = 'https://rickandmortyapi.com/api/character/?name=';
 
 export const FETCH_BOOK = 'FETCH_BOOK';
 export const FETCH_RAM = 'FETCH_RAM';
@@ -22,9 +22,9 @@ export function fetchBook(book) {
     payload: request
   };
 }
-export function fetchRAM() {
+export function fetchRAM(char) {
   // console.log('BOOK?', book);
-  const url = `${RAM_URL}`;
+  const url = `${RAM_URL}` + char;
   console.log('URL', url);
   const request = axios.get(url);
 

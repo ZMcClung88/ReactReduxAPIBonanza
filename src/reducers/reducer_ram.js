@@ -5,7 +5,7 @@ export default function(state = [], action) {
   switch (action.type) {
     case FETCH_RAM:
       // return state.concat([action.payload.data]); --> similar to below.
-      return [action.payload.data];
+      return [action.payload.data.results];
   }
   return state;
 }
