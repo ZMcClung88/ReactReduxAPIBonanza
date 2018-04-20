@@ -7,10 +7,12 @@ const ROOT_URL = 'https://www.googleapis.com/books/v1/volumes?q=';
 export const FETCH_BOOK = 'FETCH_BOOK';
 
 export function fetchBook(book) {
-  const url = `${ROOT_URL}{book}`;
+  // console.log('BOOK?', book);
+  const url = `${ROOT_URL}` + book;
+  console.log('URL', url);
   const request = axios.get(url);
 
-  console.log('Request', request);
+  // console.log('Request', request);
 
   return {
     type: FETCH_BOOK,

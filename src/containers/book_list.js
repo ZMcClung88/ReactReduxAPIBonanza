@@ -3,10 +3,14 @@ import { connect } from 'react-redux';
 
 class BookList extends Component {
   renderBooks(bookData) {
-    console.log('book data', bookData);
+    // console.log('book data', bookData);
+    const booksArr = bookData.items;
+    const title = booksArr.map(book => book.volumeInfo.title);
+    console.log('title', title);
+
     return (
-      <tr key={name}>
-        <td>Example Book</td>
+      <tr key={title}>
+        <td>{title}</td>
       </tr>
     );
   }
@@ -18,7 +22,7 @@ class BookList extends Component {
             <th>Book</th>
           </tr>
         </thead>
-        <tbody>Books will go here</tbody>
+        <tbody>{this.props.book.map(this.renderBooks)}</tbody>
       </table>
     );
   }
