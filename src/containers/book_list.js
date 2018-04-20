@@ -5,12 +5,13 @@ class BookList extends Component {
   renderBooks(bookData) {
     // console.log('book data', bookData);
     const booksArr = bookData.items;
-    const title = booksArr.map(book => book.volumeInfo.title);
-    console.log('title', title);
+    const title = booksArr.map(bookData => bookData.volumeInfo.title);
+    const imgArr = booksArr.map(bookData => bookData.volumeInfo.imageLinks.thumbnail);
+    console.log('new img', imgArr);
 
     return (
       <tr key={title}>
-        <td>{title}</td>
+        <td>{imgArr.map(img => <img src={img} />)}</td>
       </tr>
     );
   }
