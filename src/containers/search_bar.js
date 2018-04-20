@@ -7,10 +7,13 @@ class SearchBar extends Component {
     this.state = {
       term: ''
     };
+
+    this.onInputChange = this.onInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   onInputChange(event) {
-    // console.log('search bar event', event.target.value);
+    console.log('search bar event', event.target.value);
     this.setState({
       term: event.target.value
     });
@@ -25,7 +28,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
         <input
           placeholder="Search for a book"
           className="form-control"
