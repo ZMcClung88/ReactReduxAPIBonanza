@@ -1,13 +1,19 @@
-.input-group {
-  margin: 20px 0px;
-}
-
 tr {
-  /* width: 80%; */
-  /* border: 1px solid red; */
-  overflow: scroll;
   display: flex;
   flex-wrap: wrap;
+  /* border: 1px solid red; */
+  justify-content: space-around;
+  align-items: center;
+}
+
+td,
+th {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+.input-group {
+  margin: 20px 0px;
 }
 
 svg {
