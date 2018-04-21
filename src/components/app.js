@@ -4,6 +4,7 @@ import BookList from '../containers/book_list';
 import RAMSearchBar from '../containers/ram_search_bar';
 import RAMList from '../containers/RAM_list';
 import WeatherSearchBar from '../containers/weather_search_bar';
+import WeatherList from '../containers/weather_list';
 
 export default class App extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class App extends Component {
         <RAMSearchBar />
         <RAMList />
         <WeatherSearchBar />
+        <WeatherList />
       </div>
     );
   }
