@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-// const API_KEY = 'db9ab39b8cff62e7cb59d50fd2282de2';
+const API_KEY = 'db9ab39b8cff62e7cb59d50fd2282de2';
+const WEATHER_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 const ROOT_URL = 'https://www.googleapis.com/books/v1/volumes?q=';
 // same as ^^^^ const ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast?appid=' + API_KEY
 const RAM_URL = 'https://rickandmortyapi.com/api/character/?name=';
 
 export const FETCH_BOOK = 'FETCH_BOOK';
 export const FETCH_RAM = 'FETCH_RAM';
+export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchBook(book) {
   // console.log('BOOK?', book);
@@ -32,6 +34,18 @@ export function fetchRAM(char) {
 
   return {
     type: FETCH_RAM,
+    // We are returning the promise as the payload
+    payload: request
+  };
+}
+export function fetchWeather(city) {
+  const url = `${WEATHER_URL}&q=${city},us`;
+  const request = axios.get(url);
+
+  console.log('Request', request);
+
+  return {
+    type: FETCH_WEATHER,
     // We are returning the promise as the payload
     payload: request
   };
