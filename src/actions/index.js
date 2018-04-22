@@ -25,7 +25,6 @@ export function fetchBook(book) {
   };
 }
 export function fetchRAM(char) {
-  // console.log('BOOK?', book);
   const url = `${RAM_URL}` + char;
   console.log('URL', url);
   const request = axios.get(url);

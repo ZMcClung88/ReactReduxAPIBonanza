@@ -5,7 +5,7 @@ import RAMSearchBar from '../containers/ram_search_bar';
 import RAMList from '../containers/RAM_list';
 import WeatherSearchBar from '../containers/weather_search_bar';
 import WeatherList from '../containers/weather_list';
-import ChuckNorris from '../containers/chuck_norris';
+import ChuckNorris from './chuck_norris';
 
 export default class App extends Component {
   render() {
