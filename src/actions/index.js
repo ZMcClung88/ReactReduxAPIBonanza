@@ -5,10 +5,12 @@ const WEATHER_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API
 // same as ^^^^ const ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast?appid=' + API_KEY
 const ROOT_URL = 'https://www.googleapis.com/books/v1/volumes?q=';
 const RAM_URL = 'https://rickandmortyapi.com/api/character/?name=';
+const JOKE_URL = 'http://api.icndb.com/jokes/random';
 
 export const FETCH_BOOK = 'FETCH_BOOK';
 export const FETCH_RAM = 'FETCH_RAM';
 export const FETCH_WEATHER = 'FETCH_WEATHER';
+export const FETCH_JOKES = 'FETCH_JOKES';
 
 export function fetchBook(book) {
   // console.log('BOOK?', book);
@@ -46,6 +48,18 @@ export function fetchWeather(city) {
 
   return {
     type: FETCH_WEATHER,
+    // We are returning the promise as the payload
+    payload: request
+  };
+}
+export function fetchJokes() {
+  const url = `${JOKE_URL}`;
+  const request = axios.get(url);
+
+  console.log('Chuck Norris Request', request);
+
+  return {
+    type: FETCH_JOKES,
     // We are returning the promise as the payload
     payload: request
   };
