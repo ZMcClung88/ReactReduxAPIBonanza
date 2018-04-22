@@ -26,3 +26,10 @@ td:first-of-type > div {
   height: 200px;
   width: 250px;
 }
+
+.joke {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0px;
+}

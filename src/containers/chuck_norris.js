@@ -20,9 +20,8 @@ class ChuckNorris extends Component {
 
   render() {
     return (
-      <div>
-        <h6>Joke goes here</h6>
-        <p>{this.state.joke}</p>
+      <div className="joke">
+        <h5>{this.state.joke}</h5>
       </div>
     );
   }
