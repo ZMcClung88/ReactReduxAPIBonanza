@@ -6,27 +6,35 @@ const WEATHER_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API
 const ROOT_URL = 'https://www.googleapis.com/books/v1/volumes?q=';
 const RAM_URL = 'https://rickandmortyapi.com/api/character/?name=';
 
+export const FETCH_BOOKS = 'FETCH_BOOKS';
 export const FETCH_BOOK = 'FETCH_BOOK';
 export const FETCH_RAM = 'FETCH_RAM';
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
-export function fetchBook(book) {
-  // console.log('BOOK?', book);
-  const url = `${ROOT_URL}` + book;
-  // console.log('URL', url);
+export function fetchBooks(books) {
+  const url = `${ROOT_URL}` + books;
   const request = axios.get(url);
 
-  // console.log('Request', request);
-
   return {
-    type: FETCH_BOOK,
+    type: FETCH_BOOKS,
     // We are returning the promise as the payload
     payload: request
   };
 }
+
+export function fetchBook(books, id) {
+  console.log('fetching one book', books);
+  console.log('fetching a book', id);
+  const request = axios.get(`${ROOT_URL}` + books);
+
+  return {
+    type: 'FETCH_BOOK',
+    payload: request
+  };
+}
 export function fetchRAM(char) {
-  const url = `${RAM_URL}` + char;
-  console.log('URL', url);
+  const url = `${RAM_URL}` + char + '&limit=3';
+  // console.log('URL', url);
   const request = axios.get(url);
 
   console.log(' RAM Request', request);

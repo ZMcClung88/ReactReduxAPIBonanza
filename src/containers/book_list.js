@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ShowBook from '../components/show_book';
 
 class BookList extends Component {
   renderBooks(bookData) {
