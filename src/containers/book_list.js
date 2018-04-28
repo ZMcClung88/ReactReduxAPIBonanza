@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ShowBook from '../components/show_book';
+import { Link } from 'react-router-dom';
 
 class BookList extends Component {
   renderBooks(bookData) {
@@ -8,6 +9,7 @@ class BookList extends Component {
     const booksArr = bookData.items;
     const key = bookData;
     const title = booksArr.map(bookData => bookData.volumeInfo.title);
+
     // const imgArr = booksArr.map(bookData => bookData.volumeInfo.imageLinks);
     // let img = imgArr.map(img => img.smallThumbnail);
 
@@ -17,7 +19,9 @@ class BookList extends Component {
           return (
             <td>
               <p>{book.volumeInfo.title}</p>
-              <img src={book.volumeInfo.imageLinks.smallThumbnail} />
+              <Link to={`/books/${book.id}`}>
+                <img src={book.volumeInfo.imageLinks.smallThumbnail} />
+              </Link>
             </td>
           );
         })}
