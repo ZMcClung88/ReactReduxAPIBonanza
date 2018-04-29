@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/app';
 import ShowBook from './components/show_book';
+import SingleRamChar from './components/single_ramchar';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -17,7 +18,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          {/* <Route path="/posts/new" component={PostsNew} /> */}
+          <Route path="/char/:id" component={SingleRamChar} />
           <Route path="/books/:id" component={ShowBook} />
           <Route path="/" component={App} />
         </Switch>

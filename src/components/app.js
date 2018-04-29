@@ -13,12 +13,12 @@ export default class App extends Component {
     return (
       <div>
         {/* <ChuckNorris /> */}
-        <SearchBar />
-        <BookList />
+        {/* <SearchBar />
+        <BookList /> */}
         {/* <ShowBook /> */}
-        {/* <RAMSearchBar />
+        <RAMSearchBar />
         <RAMList />
-        <WeatherSearchBar />
+        {/*  <WeatherSearchBar />
         <WeatherList /> */}
       </div>
     );

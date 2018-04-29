@@ -27,7 +27,7 @@ class ShowBook extends Component {
   }
 }
 
-function mapStateToProps({ book }, ownProps) {
+function mapStateToProps({ book }) {
   return { book };
 }
 

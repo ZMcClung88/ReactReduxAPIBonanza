@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import SingleRamChar from '../components/single_ramchar';
+import { Link } from 'react-router-dom';
 
 class RAMList extends Component {
   renderRAM(RAMData) {
@@ -10,7 +12,9 @@ class RAMList extends Component {
         {RAMData.map(char => {
           return (
             <td>
-              <img src={char.image} />
+              <Link to="/char/${char.id}">
+                <img src={char.image} />
+              </Link>
               <p>{char.name}</p>
             </td>
           );
