@@ -5,9 +5,9 @@ import { fetchRAMCHAR } from '../actions/index';
 
 class SingleRamChar extends Component {
   componentDidMount() {
-    console.log('props', this.props);
+    // console.log('props', this.props);
     const { id } = this.props.match.params;
-    // console.log('mounted', id);
+    console.log('mounted', id);
     this.props.fetchRAMCHAR(id);
   }
   render() {
