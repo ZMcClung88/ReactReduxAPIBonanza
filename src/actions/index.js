@@ -46,7 +46,7 @@ export function fetchRAM(char) {
   };
 }
 export function fetchRAMCHAR(id) {
-  const url = `${RAM_URL}` + id;
+  const url = `${RAM_URL}?id=` + id;
   // console.log('URL', url);
   const request = axios.get(url);
 

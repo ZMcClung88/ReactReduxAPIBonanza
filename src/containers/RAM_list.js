@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 
 class RAMList extends Component {
   renderRAM(RAMData) {
-    console.log('rick and morty data', RAMData);
+    // console.log('rick and morty data', RAMData);
 
     return (
       <tr>
         {RAMData.map(char => {
           return (
             <td>
-              <Link to="/char/${char.id}">
+              <Link to={`/char/${char.id}`}>
                 <img src={char.image} />
               </Link>
               <p>{char.name}</p>

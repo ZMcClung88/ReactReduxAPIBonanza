@@ -5,8 +5,9 @@ import { fetchRAMCHAR } from '../actions/index';
 
 class SingleRamChar extends Component {
   componentDidMount() {
+    console.log('props', this.props);
     const { id } = this.props.match.params;
-    console.log('mounted', id);
+    // console.log('mounted', id);
     this.props.fetchRAMCHAR(id);
   }
   render() {
@@ -19,4 +20,8 @@ class SingleRamChar extends Component {
   }
 }
 
-export default connect(null, { fetchRAMCHAR })(SingleRamChar);
+function mapStateToProps({ ram }) {
+  return { ram };
+}
+
+export default connect(mapStateToProps, { fetchRAMCHAR })(SingleRamChar);
