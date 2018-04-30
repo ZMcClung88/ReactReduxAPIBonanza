@@ -37,7 +37,7 @@ export function fetchRAM(char) {
   // console.log('URL', url);
   const request = axios.get(url);
 
-  console.log(' RAM Request', request);
+  // console.log(' RAM Request', request);
 
   return {
     type: FETCH_RAM,
@@ -50,7 +50,7 @@ export function fetchRAMCHAR(id) {
   // console.log('URL', url);
   const request = axios.get(url);
 
-  console.log(' RAM Request', request);
+  // console.log(' RAM Request', request);
 
   return {
     type: FETCH_RAM,
