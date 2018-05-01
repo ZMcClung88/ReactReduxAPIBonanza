@@ -10,6 +10,7 @@ class RAMList extends Component {
     return (
       <tr>
         {RAMData.map(char => {
+          console.log('!!!!!', char.id);
           return (
             <td>
               <Link to={`/char/${char.id}`}>
@@ -37,6 +38,7 @@ class RAMList extends Component {
 }
 
 function mapStateToProps({ ram }) {
+  // console.log('mapstate', ram);
   return { ram };
 }
 
