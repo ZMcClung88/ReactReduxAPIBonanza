@@ -53,7 +53,7 @@ export function fetchRAMCHAR(id) {
   // console.log(' RAM Request', request);
 
   return {
-    type: FETCH_RAM,
+    type: FETCH_RAMCHAR,
     // We are returning the promise as the payload
     payload: request
   };
