@@ -11,15 +11,15 @@ class SingleRamChar extends Component {
     this.props.fetchRAMCHAR(id);
   }
   render() {
-    const { ram } = this.props;
-    const char = ram[0];
-    console.log('char 2', char);
+    const { data } = this.props.ram[0];
+    console.log('char data', data);
+    // console.log('char name', data.name);
 
     return (
       <div>
         <h5>Single Character Shizzz</h5>
-        <img src={char.image} />
-        <h1>{char.name}</h1>
+        {/* <img src={char.image} />
+        <h1>{char.name}</h1> */}
       </div>
     );
   }
